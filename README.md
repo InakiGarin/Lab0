@@ -74,7 +74,6 @@ uv run python -m src.cli numeric --help
 ```bash
 uv run python -m src.cli clean remove-missing-values "[1, None, 2]"
 uv run python -m src.cli clean fill-missing-values "[1, None, 2]" --fill-value 0
-uv run python -m src.cli clean remove-duplicates "[1, 2, 2, 3]"
 ```
 
 **Numeric:**
