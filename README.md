@@ -1,5 +1,7 @@
 # Lab0 - Fundamentals of Continuous Integration
 
+**GitHub repository:** [https://github.com/InakiGarin/Lab0](https://github.com/InakiGarin/Lab0)
+
 ## Overview
 
 This project implements a collection of data preprocessing functions and a command-line interface (CLI) using Python and Click.
@@ -39,7 +41,7 @@ This project uses [uv](https://docs.astral.sh/uv/) for Python environment and de
 Clone the repository:
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
+git clone https://github.com/InakiGarin/Lab0.git
 cd Lab0
 ```
 
