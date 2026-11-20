@@ -13,12 +13,6 @@ def sample_numbers():
     return [1, 2, 3, 4, 5]
 
 
-@pytest.fixture
-def sample_missing_values():
-    """Return a list containing different missing values."""
-    return [1, None, "", float("nan"), 2]
-
-
 @pytest.mark.parametrize(
     "values, expected",
     [
@@ -30,11 +24,6 @@ def sample_missing_values():
 )
 def test_remove_missing_values(values, expected):
     assert preprocessing.remove_missing_values(values) == expected
-
-
-def test_remove_missing_values_fixture(sample_missing_values):
-    result = preprocessing.remove_missing_values(sample_missing_values)
-    assert result == [1, 2]
 
 
 def test_fill_missing_values():

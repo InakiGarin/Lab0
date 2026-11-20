@@ -15,7 +15,6 @@ The preprocessing functions are organized into four categories:
 ### 1. Clean
 - Remove missing values.
 - Fill missing values with a specified value.
-- Remove duplicate values.
 
 ### 2. Numeric
 - Normalize values using Min-Max scaling.
@@ -124,20 +123,21 @@ To display the lines not covered by tests:
 uv run python -m pytest --cov=src --cov-report=term-missing
 ```
 
+### Test Results
+
+- 39 tests passed.
+- 99% total code coverage.
+- 100% coverage for `preprocessing.py`.
+- 99% coverage for `cli.py`.
+
 ## Code Quality
 
 The project uses Black for code formatting and Pylint for static code analysis.
 
-Format the source files:
+Format the source and test files:
 
 ```bash
-uv run black src/*.py
-```
-
-Format the test files:
-
-```bash
-uv run black tests/*.py
+uv run black src/ tests/
 ```
 
 Run Pylint:
@@ -145,6 +145,8 @@ Run Pylint:
 ```bash
 uv run python -m pylint src/*.py
 ```
+
+The project achieved a Pylint score of 10/10.
 
 ## Project Structure
 

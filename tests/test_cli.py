@@ -4,20 +4,11 @@ import pytest
 from click.testing import CliRunner
 from src.cli import cli
 
-# --------------------------------------------------
-# FIXTURES
-# --------------------------------------------------
-
 
 @pytest.fixture
 def runner():
     """Create a CLI runner to invoke commands."""
     return CliRunner()
-
-
-# --------------------------------------------------
-# CLEAN TESTS
-# --------------------------------------------------
 
 
 def test_remove_missing_values_cli(runner):
@@ -51,11 +42,6 @@ def test_fill_missing_values_custom_cli(runner):
 
     assert result.exit_code == 0
     assert ast.literal_eval(result.output) == [1, 99, 3]
-
-
-# --------------------------------------------------
-# NUMERIC TESTS
-# --------------------------------------------------
 
 
 def test_normalize_cli(runner):
@@ -141,11 +127,6 @@ def test_log_transform_cli(runner):
     )
 
 
-# --------------------------------------------------
-# TEXT TESTS
-# --------------------------------------------------
-
-
 def test_tokenize_cli(runner):
     """Test the tokenize CLI command."""
     result = runner.invoke(cli, ["text", "tokenize", "Hello World! This is MLOps."])
@@ -177,11 +158,6 @@ def test_remove_stop_words_cli(runner):
 
     assert result.exit_code == 0
     assert result.output.strip() == "this machine learning project"
-
-
-# --------------------------------------------------
-# STRUCT TESTS
-# --------------------------------------------------
 
 
 def test_shuffle_cli(runner):

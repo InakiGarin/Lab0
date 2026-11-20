@@ -6,19 +6,10 @@ import click
 
 from src import preprocessing
 
-# --------------------------------------------------
-# MAIN CLI
-# --------------------------------------------------
-
 
 @click.group()
 def cli():
     """Main command line interface."""
-
-
-# --------------------------------------------------
-# CLEAN GROUP
-# --------------------------------------------------
 
 
 @cli.group()
@@ -56,11 +47,6 @@ def fill_missing_values(values, fill_value):
     values = ast.literal_eval(values)
     result = preprocessing.fill_missing_values(values, fill_value)
     click.echo(result)
-
-
-# --------------------------------------------------
-# NUMERIC GROUP
-# --------------------------------------------------
 
 
 @cli.group()
@@ -141,11 +127,6 @@ def log_transform(values):
     click.echo(result)
 
 
-# --------------------------------------------------
-# TEXT GROUP
-# --------------------------------------------------
-
-
 @cli.group()
 def text():
     """Commands for text processing."""
@@ -189,11 +170,6 @@ def remove_stop_words(input_text, stop_words):
     stop_words = stop_words.split()
     result = preprocessing.remove_stop_words(input_text, stop_words)
     click.echo(result)
-
-
-# --------------------------------------------------
-# STRUCT GROUP
-# --------------------------------------------------
 
 
 @cli.group()
@@ -242,10 +218,6 @@ def unique_values(values):
     result = preprocessing.remove_duplicates(values)
     click.echo(result)
 
-
-# --------------------------------------------------
-# ENTRY POINT
-# --------------------------------------------------
 
 if __name__ == "__main__":
     cli()

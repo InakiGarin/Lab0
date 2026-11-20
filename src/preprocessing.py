@@ -1,9 +1,9 @@
 """Module containing data preprocessing functions."""
 
 import math
-import statistics
-import re
 import random
+import re
+import statistics
 
 
 def _is_missing(value):
